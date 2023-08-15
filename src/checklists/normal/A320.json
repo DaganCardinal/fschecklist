@@ -1,0 +1,56 @@
+{
+  "A320": {
+    "PREFLIGHT": [
+      { "label": "Gear Pins and Covers", "value": "REMOVED" },
+      { "label": "Fuel Quantity", "value": "___ kg/lbs" },
+      { "label": "Passenger Signs", "value": "ON" },
+      { "label": "ADIRS", "value": "NAV" },
+      { "label": "BARO REF", "value": "SET" }
+    ],
+    "BEFORE START": [
+      { "label": "Parking Brake", "value": "SET" },
+      { "label": "T.O. Speeds & Thrust", "value": "___" },
+      { "label": "Windows", "value": "CLOSED" },
+      { "label": "Beacon", "value": "ON" }
+    ],
+    "AFTER START": [
+      { "label": "Anti Ice", "value": "AS REQUIRED" },
+      { "label": "ECAM Status", "value": "CHECKED" },
+      { "label": "Pitch Trim", "value": "___% SET" },
+      { "label": "Rudder Trim", "value": "NEUTRAL" }
+    ],
+    "TAXI": [
+      { "label": "Flight Controls", "value": "CHECKED" },
+      { "label": "Flaps", "value": "CONF___" },
+      { "label": "RADAR & PRED W/S", "value": "ON & AUTO" },
+      { "label": "ENG MODE SEL", "value": "___" },
+      { "label": "ECAM MEMO", "value": "T.O, NO BLUE" },
+      { "label": "Auto Brake", "value": "MAX" },
+      { "label": "Spoilers", "value": "ARMED" }
+    ],
+    "BEFORE TAKEOFF": [
+      { "label": "TCAS", "value": "TA or TA/RA" },
+      { "label": "Packs", "value": "AS REQUIRED" }
+    ],
+    "AFTER TAKEOFF": [
+      { "label": "Engine Mode", "value": "AS REQUIRED" },
+      { "label": "APU", "value": "AS REQUIRED" },
+      { "label": "Anti-ice", "value": "AS REQUIRED" },
+      { "label": "Landing Gear", "value": "UP and INDICATING" },
+      { "label": "Flaps", "value": "UP and INDICATING" }
+    ],
+    "DESCENT": [
+      { "label": "Altimeters", "value": "SET" },
+      { "label": "Minimums", "value": "___ SET" },
+      { "label": "Auto Brake", "value": "SET" },
+      { "label": "ENG MODE SEL", "value": "___" }
+    ],
+    "LANDING": [
+      { "label": "ECAM MEMO", "value": "LDG, NO BLUE" },
+      { "label": "Landing Gear", "value": "DOWN" },
+      { "label": "Passenger Signs", "value": "ON" },
+      { "label": "Spoilers", "value": "ARMED" },
+      { "label": "Flaps", "value": "SET" }
+    ]
+  }
+}

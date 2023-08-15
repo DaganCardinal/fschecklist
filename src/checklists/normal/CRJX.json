@@ -1,0 +1,149 @@
+{
+  "CRJX": {
+    "ORIGINATING CHECKS": [
+      { "label": "Crew Oxygen and Masks", "value": "CHECKED / QUANTITY" },
+      { "label": "Audio Warning Panel", "value": "CHECKED" },
+      { "label": "Electrical Power Panel", "value": "CHECKED" },
+      { "label": "Fire Detection Test", "value": "COMPLETE" },
+      { "label": "External Lights Panel", "value": "CHECKED" },
+      { "label": "Fuel Panel", "value": "CHECKED" },
+      { "label": "Bleed Air Panel", "value": "CHECKED" },
+      { "label": "APU Panel", "value": "AS REQUIRED" },
+      { "label": "Start Panel", "value": "CHECKED" },
+      { "label": "Hydraulic Panel", "value": "CHECKED" },
+      { "label": "ELT Switch", "value": "ARM / RESET" },
+      { "label": "Cabin Pressure Panel", "value": "CHECKED" },
+      { "label": "Air Conditioning Panel", "value": "CHECKED" },
+      { "label": "Ice Detector Tests", "value": "COMPLETE" },
+      { "label": "Windshield Heat", "value": "LOW" },
+      { "label": "Emergency Lights", "value": "ARM" },
+      { "label": "Standby Compass", "value": "CHECKED" },
+      { "label": "Stall Test", "value": "COMPLETE" },
+      { "label": "Nosewheel Steering", "value": "OFF" },
+      { "label": "Clocks", "value": "SET" },
+      { "label": "EFIS Control Panel", "value": "CHECKED" },
+      { "label": "Instrument Panel", "value": "CHECKED" },
+      { "label": "EICAS and Standby Instruments", "value": "CHECKED" },
+      { "label": "Anti-Skid Test", "value": "CHECKED" },
+      { "label": "Landing Gear Bay Ovht Test", "value": "COMPLETE" },
+      { "label": "Upper Pedestal", "value": "CHECKED" },
+      { "label": "Thrust Lever Quadrant", "value": "CHECKED" },
+      { "label": "Avionics", "value": "CHECKED" },
+      { "label": "Trims", "value": "CHECKED" },
+      { "label": "Yaw Damper", "value": "ENGAGED" },
+      { "label": "Source Select Panel", "value": "NORMAL" },
+      { "label": "Lower Pedestal", "value": "CHECKED" }
+    ],
+    "BEFORE START": [
+      { "label": "Passenger Signs", "value": "ON" },
+      { "label": "Landing Elevation", "value": "SET" },
+      { "label": "Boost Pumps", "value": "ON" },
+      { "label": "Altimeters", "value": "SET" },
+      { "label": "FMS / IRS", "value": "SET" },
+      { "label": "Radios and Nav Aids", "value": "SET FOR DEPARTURE" },
+      { "label": "Take-off Briefing", "value": "COMPLETE" }
+    ],
+    "START": [
+      { "label": "APU / AC Electrics", "value": "ON / CHECKED" },
+      { "label": "Papers", "value": "ON BOARD" },
+      { "label": "Take-Off Data", "value": "SET" },
+      { "label": "Doors", "value": "CLOSED / LOCKED" },
+      { "label": "Beacon", "value": "ON" },
+      { "label": "Fuel Pumps and Quantity", "value": "ON, __ lbs/kg" },
+      { "label": "Hydraulic Pumps", "value": "AUTO / ON" },
+      { "label": "Parking Brake", "value": "AS REQUIRED" },
+      { "label": "Engines", "value": "START" },
+      { "label": "Fuel Feed Check Valve Test", "value": "COMPLETE" }
+    ],
+    "AFTER START": [
+      { "label": "Gen 1 / Gen 2", "value": "AUTO" },
+      { "label": "Bleed Valves and Packs", "value": "AUTO / ON" },
+      { "label": "Anti-Ice", "value": "AS REQUIRED" },
+      { "label": "Probes", "value": "ON" },
+      { "label": "Electrics", "value": "CHECKED" },
+      { "label": "Rudder", "value": "CHECKED" },
+      { "label": "Nosewheel Steering", "value": "ARMED" }
+    ],
+    "BEFORE TAXI": [
+      { "label": "Flaps", "value": "___ INDICATING" },
+      { "label": "Flight Controls", "value": "CHECKED" },
+      { "label": "Trims", "value": "GREEN, ___" },
+      { "label": "Thrust Reversers", "value": "ARMED" },
+      { "label": "Flight Instruments", "value": "CHECKED" },
+      { "label": "FMS", "value": "AUTOTUNE" },
+      { "label": "Brake Temp", "value": "CHECKED" }
+    ],
+    "BEFORE TAKEOFF": [
+      { "label": "Lights and Strobes", "value": "AS REQUIRED" },
+      { "label": "Fuel, XFLOW", "value": "MAN AND OFF" },
+      { "label": "Ignition/Anti-Ice", "value": "AS REQUIRED" },
+      { "label": "Flight Attendant", "value": "ADVISED" },
+      { "label": "Transponder / TCAS", "value": "ON / AS REQUIRED" },
+      { "label": "Radar / Terrain", "value": "AS REQUIRED" },
+      { "label": "CAS", "value": "CHECKED AND CLEARED" }
+    ],
+    "AFTER TAKEOFF": [
+      { "label": "Fuel, XFLOW", "value": "AUTO" },
+      { "label": "Bleeds and APU", "value": "SET" },
+      { "label": "Lights and Passenger Signs", "value": "AS REQUIRED" },
+      { "label": "Thrust Reversers", "value": "OFF" },
+      { "label": "CAS", "value": "CHECKED AND CLEARED" }
+    ],
+    "DESCENT": [
+      { "label": "Landing Elevation", "value": "SET" },
+      { "label": "Fuel", "value": "CHECKED" },
+      { "label": "TCAS", "value": "AS REQUIRED" },
+      { "label": "Radar", "value": "AS REQUIRED" },
+      { "label": "Terrain Display", "value": "AS REQUIRED" },
+      { "label": "CAS", "value": "CHECKED AND CLEARED" },
+      { "label": "Landing Data", "value": "SET" },
+      { "label": "Approach Briefing", "value": "COMPLETE" }
+    ],
+    "APPROACH": [
+      { "label": "Altimeters", "value": "___, ___, SET" },
+      { "label": "APU and Bleeds", "value": "SET" },
+      { "label": "Lights and Passenger Signs", "value": "AS REQUIRED" }
+    ],
+    "BEFORE LANDING": [
+      { "label": "Flight Attendant", "value": "ADVISED" },
+      { "label": "Passenger Signs", "value": "ON" },
+      { "label": "Thrust Reversers", "value": "ARMED" },
+      { "label": "Landing Gear", "value": "DOWN" },
+      { "label": "Flaps", "value": "___, INDICATING" }
+    ],
+    "AFTER LANDING": [
+      { "label": "APU", "value": "AS REQUIRED" },
+      { "label": "Transponder / Radar", "value": "STANDBY / OFF" },
+      { "label": "Flaps", "value": "UP" },
+      { "label": "Lights and Strobes", "value": "AS REQUIRED" },
+      { "label": "Probes", "value": "OFF" }
+    ],
+    "SHUTDOWN": [
+      { "label": "Chocks and Brakes", "value": "AS REQUIRED" },
+      { "label": "Electrics", "value": "SET" },
+      { "label": "Fuel and Check Valve Test", "value": "COMPLETE" },
+      { "label": "Thrust Levers", "value": "SHUT OFF" },
+      { "label": "Passenger Signs", "value": "OFF" },
+      { "label": "Anti-Ice", "value": "OFF" },
+      { "label": "Fuel Pumps", "value": "OFF" },
+      { "label": "Hydraulic 3A Pump", "value": "AS REQUIRED" },
+      { "label": "Beacon", "value": "OFF" },
+      { "label": "Nosewheel Steering", "value": "OFF" }
+    ],
+    "TERMINATING": [
+      { "label": "Chocks and Brakes", "value": "IN / OFF" },
+      { "label": "IRS", "value": "OFF" },
+      { "label": "Thrust Levers", "value": "OFF" },
+      { "label": "Emergency Lights Switch", "value": "OFF" },
+      { "label": "Winshield Heat", "value": "OFF" },
+      { "label": "Hydraulic Pumps", "value": "OFF" },
+      { "label": "External Lights", "value": "OFF" },
+      { "label": "APU Start / Stop", "value": "OFF" },
+      { "label": "APU Power / Fuel", "value": "OFF" },
+      { "label": "DC Service Switch", "value": "OFF" },
+      { "label": "Battery Master", "value": "OFF" },
+      { "label": "Dome Light", "value": "OFF" },
+      { "label": "Boarding Lights", "value": "OFF" }
+    ]
+  }
+}

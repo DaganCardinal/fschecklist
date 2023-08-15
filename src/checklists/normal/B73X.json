@@ -1,0 +1,234 @@
+{
+  "Boeing 737 NGX": {
+    "Preflight": [
+      {
+        "label": "Oxygen",
+        "value": "TESTED, 100%"
+      },
+      {
+        "label": "Instrument xfer & display switches",
+        "value": "NORMAL, AUTO"
+      },
+      {
+        "label": "WINDOW HEAT",
+        "value": "ON"
+      },
+      {
+        "label": "Pressurization mode selector",
+        "value": "AUTO"
+      },
+      {
+        "label": "Flight Instruments",
+        "value": "hdg ___ alt ___"
+      },
+      {
+        "label": "Parking Brake",
+        "value": "SET"
+      },
+      {
+        "label": "Engine Start Levers",
+        "value": "CUTOFF"
+      }
+    ],
+    "Before Start": [
+      {
+        "label": "Flight Deck Door",
+        "value": "LOCKED"
+      },
+      {
+        "label": "Fuel",
+        "value": "CHECKED, PUMPS ON"
+      },
+      {
+        "label": "Passenger Signs",
+        "value": "ON"
+      },
+      {
+        "label": "Elec. Hyd. Pumps",
+        "value": "ON"
+      },
+      {
+        "label": "Windows",
+        "value": "LOCKED"
+      },
+      {
+        "label": "MCP",
+        "value": "v2 ___ hdg ___ alt ___"
+      },
+      {
+        "label": "Takeoff Speeds",
+        "value": "v1 ___ vr ___ v2 ___"
+      },
+      {
+        "label": "CDU Preflight",
+        "value": "COMPLETED"
+      },
+      {
+        "label": "Rudder & Aileron Trim",
+        "value": "FREE & ZERO"
+      },
+      {
+        "label": "Taxi & Takeoff Briefing",
+        "value": "COMPLETED"
+      },
+      {
+        "label": "Anti Collision Lights",
+        "value": "ON"
+      }
+    ],
+    "Before Taxi": [
+      {
+        "label": "Generators",
+        "value": "ON"
+      },
+      {
+        "label": "Probe Heat",
+        "value": "ON"
+      },
+      {
+        "label": "Anti-Ice",
+        "value": "___ AS NEEDED"
+      },
+      {
+        "label": "Isolation Valves",
+        "value": "AUTO"
+      },
+      {
+        "label": "Engine Start Switches",
+        "value": "CONTINUOUS"
+      },
+      {
+        "label": "Recall",
+        "value": "CHECKED"
+      },
+      {
+        "label": "Autobrake",
+        "value": "RTO"
+      },
+      {
+        "label": "Engine Start Levers",
+        "value": "IDLE DETENT"
+      },
+      {
+        "label": "Flight Controls",
+        "value": "CHECKED"
+      },
+      {
+        "label": "Ground Equipment",
+        "value": "CLEAR"
+      }
+    ],
+    "Before Takeoff": [
+      {
+        "label": "Flaps",
+        "value": "___, GREEN LIGHT"
+      },
+      {
+        "label": "Stablizer Trim",
+        "value": "___ UNITS, SET"
+      }
+    ],
+    "After Takeoff": [
+      {
+        "label": "Engine Bleeds",
+        "value": "ON"
+      },
+      {
+        "label": "Packs",
+        "value": "AUTO"
+      },
+      {
+        "label": "Landing Gear",
+        "value": "UP & OFF"
+      },
+      {
+        "label": "Flaps",
+        "value": "UP, NO LIGHTS"
+      },
+      {
+        "label": "Engine Start Switches",
+        "value": "OFF"
+      }
+    ],
+    "Descent": [
+      {
+        "label": "Pressurization",
+        "value": "landing alt set"
+      },
+      {
+        "label": "Recall",
+        "value": "checked"
+      },
+      {
+        "label": "autobrake",
+        "value": "___ set"
+      },
+      {
+        "label": "landing data",
+        "value": "vref ___, minimums ___"
+      },
+      {
+        "label": "approach briefing",
+        "value": "completed"
+      }
+    ],
+    "Approach": [
+      {
+        "label": "Altimeters",
+        "value": "__ set & xchecked"
+      }
+    ],
+    "Landing": [
+      {
+        "label": "engine start switches",
+        "value": "continuous"
+      },
+      {
+        "label": "speed brake",
+        "value": "armed"
+      },
+      {
+        "label": "landing gear",
+        "value": "down, 3 green"
+      },
+      {
+        "label": "flaps",
+        "value": "___, indicating"
+      }
+    ],
+    "Shutdown": [
+      {
+        "label": "fuel pumps",
+        "value": "OFF"
+      },
+      {
+        "label": "Passenger Signs",
+        "value": "OFF"
+      },
+      {
+        "label": "probe heat",
+        "value": "off"
+      },
+      {
+        "label": "hydraulic panel",
+        "value": "set"
+      },
+      {
+        "label": "flaps",
+        "value": "up"
+      },
+      {
+        "label": "parking brake",
+        "value": "as required"
+      },
+      {
+        "label": "engine start levers",
+        "value": "cutoff"
+      },
+      {
+        "label": "weather radar",
+        "value": "off"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+.checklist-item {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.label {
+  flex-shrink: 0;
+  align-self: flex-end;
+}
+
+.dots {
+  flex-grow: 1;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    black 25%,
+    transparent 25%,
+    transparent 100%
+  );
+  background-size: 15px 2px;
+  margin: 0 5px;
+  position: relative;
+  bottom: -0.3em;
+}
+
+.value {
+  flex-shrink: 0;
+}
+
+.subtext {
+  font-size: 80%;
+  margin-left: 5px;
+}
