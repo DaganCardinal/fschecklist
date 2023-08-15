@@ -13,6 +13,6 @@ export type ListDataType = {
 };
 
 export type userPrefsType = {
-  expanded: boolean;
+  allExpanded: boolean;
   theme: string;
 };

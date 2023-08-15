@@ -15,16 +15,21 @@ export const ListSection: React.FC<ListSectionProps> = ({
   allExpanded,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [checkedCount, setCheckedCount] = useState(0);
+  const [checkedItems, setCheckedItems] = useState<boolean[]>(
+    items.map(() => false)
+  );
 
-  const handleChecked = (isChecked: boolean) => {
-    setCheckedCount(isChecked ? checkedCount + 1 : checkedCount - 1);
+  const handleChecked = (isChecked: boolean, index: number) => {
+    const newCheckedItems = [...checkedItems];
+    newCheckedItems[index] = isChecked;
+    setCheckedItems(newCheckedItems);
   };
 
   useEffect(() => {
     setIsExpanded(allExpanded ?? false);
   }, [allExpanded]);
 
+  const checkedCount = checkedItems.filter((item) => item).length;
   const allChecked = checkedCount === items.length;
 
   return (
@@ -46,7 +51,8 @@ export const ListSection: React.FC<ListSectionProps> = ({
               key={index}
               label={item.label}
               value={item.value}
-              onChecked={handleChecked}
+              onChecked={(checked) => handleChecked(checked, index)}
+              defaultChecked={checkedItems[index]}
             />
           ))}
         </div>

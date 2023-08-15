@@ -7,6 +7,7 @@ export type ListItemProps = {
   value: string;
   subtext?: string;
   onChecked?: (checked: boolean) => void;
+  defaultChecked?: boolean;
 };
 
 export const ListItem = ({
@@ -14,8 +15,9 @@ export const ListItem = ({
   value,
   subtext,
   onChecked,
+  defaultChecked,
 }: ListItemProps) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(defaultChecked ?? false);
 
   const handleChecked = () => {
     const newCheckedState = !isChecked;

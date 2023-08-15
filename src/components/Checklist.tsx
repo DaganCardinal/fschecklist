@@ -1,7 +1,7 @@
 import { ListSection } from "./ListSection";
 import { ListDataType } from "../utils/types";
 import { ToggleSwitch } from "flowbite-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const Checklist = ({
   checklistData,
@@ -11,10 +11,17 @@ export const Checklist = ({
   title: string;
 }) => {
   const [allExpanded, setAllExpanded] = useState(false);
+  const allExpandedFromLocalStorage = localStorage.getItem("allExpanded");
+
+  useEffect(() => {
+    if (allExpandedFromLocalStorage) {
+      setAllExpanded(allExpandedFromLocalStorage === "true");
+    }
+  }, []);
 
   const handleAllExpanded = (isChecked: boolean) => {
-    console.log(isChecked);
     setAllExpanded(isChecked);
+    localStorage.setItem("allExpanded", isChecked.toString());
   };
 
   return (
