@@ -22,9 +22,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
   };
 
   useEffect(() => {
-    if (allExpanded) {
-      setIsExpanded(true);
-    }
+    setIsExpanded(allExpanded ?? false);
   }, [allExpanded]);
 
   const allChecked = checkedCount === items.length;
