@@ -11,39 +11,44 @@ import { CRJX } from "./routes/CRJ";
 import { Home } from "./routes/Home";
 import { ErrorPage } from "./pages/ErrorPage";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Root />,
+      errorElement: <ErrorPage />,
+      children: [
+        {
+          path: "/737",
+          element: <B73XNG />,
+        },
+        {
+          path: "/208",
+          element: <C208B />,
+        },
+        {
+          path: "/a320",
+          element: <A320 />,
+        },
+        {
+          path: "/c172",
+          element: <C172 />,
+        },
+        {
+          path: "/crjx",
+          element: <CRJX />,
+        },
+        {
+          path: "/home",
+          element: <Home />,
+        },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Root />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        path: "/737",
-        element: <B73XNG />,
-      },
-      {
-        path: "/208",
-        element: <C208B />,
-      },
-      {
-        path: "/a320",
-        element: <A320 />,
-      },
-      {
-        path: "/c172",
-        element: <C172 />,
-      },
-      {
-        path: "/crjx",
-        element: <CRJX />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
-      },
-    ],
-  },
-]);
+    basename: "/fschecklist",
+  }
+);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
