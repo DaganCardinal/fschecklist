@@ -25,6 +25,10 @@ export const ListSection: React.FC<ListSectionProps> = ({
     setCheckedItems(newCheckedItems);
   };
 
+  const checkAllItems = () => {
+    setCheckedItems(items.map(() => true));
+  };
+
   useEffect(() => {
     setIsExpanded(allExpanded ?? false);
   }, [allExpanded]);
@@ -57,6 +61,22 @@ export const ListSection: React.FC<ListSectionProps> = ({
             />
           </svg>
           {toTitleCase(title)}
+          {!allChecked && (
+            <button id="checkAll" onClick={checkAllItems}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                className="my-auto ms-2 fill-green-500 w-5 h-5 stroke-green-500"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  fill="none"
+                  stroke-width="1"
+                />
+              </svg>
+            </button>
+          )}
           {allChecked && (
             <svg
               xmlns="http://www.w3.org/2000/svg"
