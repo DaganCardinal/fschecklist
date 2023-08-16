@@ -8,11 +8,14 @@ import { C208B } from "./routes/C208B";
 import { A320 } from "./routes/A320";
 import { C172 } from "./routes/C172";
 import { CRJX } from "./routes/CRJ";
+import { Home } from "./routes/Home";
+import { ErrorPage } from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/737",
@@ -33,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/crjx",
         element: <CRJX />,
+      },
+      {
+        path: "/home",
+        element: <Home />,
       },
     ],
   },

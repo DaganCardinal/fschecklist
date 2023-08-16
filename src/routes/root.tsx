@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import { MainNavbar } from "../components/Navbar";
 
 export default function Root() {
+  // Get path name
+  const path = window.location.pathname;
+
   return (
     <>
+      {path == "/" && <Navigate to="/home" />}
       <MainNavbar />
       <Outlet />
     </>
