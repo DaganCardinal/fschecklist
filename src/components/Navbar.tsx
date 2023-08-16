@@ -1,18 +1,32 @@
+import { Link } from "react-router-dom";
 import { Navbar } from "flowbite-react";
+import Logo from "../assets/logo.png";
 
 export const MainNavbar = () => {
   return (
     <Navbar fluid rounded className="shadow-md shadow-slate-400">
-      <Navbar.Brand href="/">
-        <img src="/favicon.png" alt="FSChecklist" className="w-12 h-12" />
-      </Navbar.Brand>
+      <Link to="/home">
+        <Navbar.Brand>
+          <img src={Logo} alt="FSChecklist" className="w-12 h-12" />
+        </Navbar.Brand>
+      </Link>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link href="/737">Boeing 737 NG</Navbar.Link>
-        <Navbar.Link href="/208">Cessna 208B</Navbar.Link>
-        <Navbar.Link href="/a320">Airbus A320</Navbar.Link>
-        <Navbar.Link href="/c172">Cessna 172</Navbar.Link>
-        <Navbar.Link href="/crjx">CRJ</Navbar.Link>
+        <Link to="/737">
+          <Navbar.Link>Boeing 737 NG</Navbar.Link>
+        </Link>
+        <Link to="/208">
+          <Navbar.Link>Cessna 208B</Navbar.Link>
+        </Link>
+        <Link to="/a320">
+          <Navbar.Link>Airbus A320</Navbar.Link>
+        </Link>
+        <Link to="/c172">
+          <Navbar.Link>Cessna 172</Navbar.Link>
+        </Link>
+        <Link to="/crjx">
+          <Navbar.Link>CRJ</Navbar.Link>
+        </Link>
       </Navbar.Collapse>
     </Navbar>
   );

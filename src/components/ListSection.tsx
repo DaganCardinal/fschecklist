@@ -122,7 +122,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
               label={item.label}
               value={item.value}
               onChecked={(checked) => handleChecked(checked, index)}
-              defaultChecked={checkedItems[index]}
+              checked={checkedItems[index]}
             />
           ))}
         </div>
