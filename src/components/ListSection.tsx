@@ -26,15 +26,29 @@ export const ListSection: React.FC<ListSectionProps> = ({
   };
 
   const checkAllItems = () => {
+    if (allChecked) {
+      setCheckedItems(items.map(() => false));
+      return;
+    }
     setCheckedItems(items.map(() => true));
   };
 
+  // Handle expansion of all sections
   useEffect(() => {
     setIsExpanded(allExpanded ?? false);
   }, [allExpanded]);
 
   const checkedCount = checkedItems.filter((item) => item).length;
   const allChecked = checkedCount === items.length;
+
+  // Handle checking or unchecking of all items
+  useEffect(() => {
+    if (allChecked) {
+      setCheckedItems(items.map(() => true));
+      return;
+    }
+    setCheckedItems(items.map(() => false));
+  }, [allChecked]);
 
   return (
     <div className="my-6">
@@ -61,23 +75,25 @@ export const ListSection: React.FC<ListSectionProps> = ({
             />
           </svg>
           {toTitleCase(title)}
-          {!allChecked && (
-            <button id="checkAll" onClick={checkAllItems}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                className="my-auto ms-2 fill-green-500 w-5 h-5 stroke-green-500"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                  fill="none"
-                  stroke-width="1"
-                />
-              </svg>
-            </button>
-          )}
-          {allChecked && (
+        </button>
+        {!allChecked && (
+          <button id="checkAll" onClick={checkAllItems}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              className="my-auto ms-2 fill-black w-4 h-4 stroke-black"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                fill="none"
+                stroke-width="1"
+              />
+            </svg>
+          </button>
+        )}
+        {allChecked && (
+          <button id="uncheckAll" onClick={checkAllItems}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -95,8 +111,8 @@ export const ListSection: React.FC<ListSectionProps> = ({
                 stroke-width="1"
               />
             </svg>
-          )}
-        </button>
+          </button>
+        )}
       </div>
       {isExpanded && (
         <div className="mx-8">
