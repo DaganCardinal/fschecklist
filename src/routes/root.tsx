@@ -7,7 +7,7 @@ export default function Root() {
 
   return (
     <>
-      {path == "/fschecklist/" && <Navigate to="/home" />}
+      {path == "/" && <Navigate to="/home" />}
       <MainNavbar />
       <Outlet />
     </>
