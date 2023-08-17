@@ -38,7 +38,7 @@ export const Checklist = ({
           {title}
         </h1>
       </div>
-      <div className="flex flex-col mx-auto justify-center w-1/2">
+      <div className="flex flex-col mx-auto justify-center lg:w-1/2 md:w-2/3">
         {Object.keys(checklistData).map((aircraft) => (
           <div key={aircraft} className="space-y-4">
             {Object.keys(checklistData[aircraft]).map((sectionTitle, index) => (
