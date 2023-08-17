@@ -7,14 +7,16 @@ type ListSectionProps = {
   title: string;
   allExpanded?: boolean;
   items: ListItemType[];
+  index: number;
 };
 
 export const ListSection: React.FC<ListSectionProps> = ({
   title,
   items,
   allExpanded,
+  index,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(index === 0);
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
     items.map(() => false)
   );
@@ -35,7 +37,9 @@ export const ListSection: React.FC<ListSectionProps> = ({
 
   // Handle expansion of all sections
   useEffect(() => {
-    setIsExpanded(allExpanded ?? false);
+    if (index !== 0 || allExpanded) {
+      setIsExpanded(allExpanded ?? false);
+    }
   }, [allExpanded]);
 
   const checkedCount = checkedItems.filter((item) => item).length;
@@ -54,7 +58,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
     <div className="my-6">
       <div className="flex flex-row w-full justify-center">
         <button
-          className={`flex flex-row font-semibold tracking-wider text-xl text-center pt-4 ${
+          className={`flex flex-row font-semibold tracking-wider text-xl text-center pt-4  ${
             allChecked && "line-through"
           }`}
           onClick={() => setIsExpanded(!isExpanded)}

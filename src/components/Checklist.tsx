@@ -41,12 +41,13 @@ export const Checklist = ({
       <div className="flex flex-col mx-auto justify-center w-1/2">
         {Object.keys(checklistData).map((aircraft) => (
           <div key={aircraft} className="space-y-4">
-            {Object.keys(checklistData[aircraft]).map((sectionTitle) => (
+            {Object.keys(checklistData[aircraft]).map((sectionTitle, index) => (
               <ListSection
                 key={sectionTitle}
                 title={sectionTitle}
                 items={checklistData[aircraft][sectionTitle]}
                 allExpanded={allExpanded}
+                index={index}
               />
             ))}
           </div>
