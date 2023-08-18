@@ -7,7 +7,12 @@ export default {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: ['"Nunito"', "sans-serif"],
+        body: ["Roboto", "sans-serif"],
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };

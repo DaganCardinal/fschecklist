@@ -4,9 +4,9 @@ import { Button } from "flowbite-react";
 export const Home = () => {
   return (
     <>
-      <div className="flex flex-col justify-center mx-auto text-center mt-12">
-        <h1 className="text-3xl font-bold mb-8">FSChecklist</h1>
-        <p className="text-xl my-4">
+      <div className="flex flex-col justify-center mx-auto text-center mt-12 font-body">
+        <h1 className="text-3xl font-bold font-heading mb-2">FSChecklist</h1>
+        <p className="text-xl mb-8">
           A simple checklist web app for flight simulators
         </p>
         <p className="text-xl">Select an aircraft to get started</p>

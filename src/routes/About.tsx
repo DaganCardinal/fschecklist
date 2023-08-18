@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export const About = () => {
   return (
-    <div className="flex flex-col w-full justify-center my-10">
+    <div className="flex flex-col w-full justify-center my-10 font-body">
       <div>
-        <h1 className="text-3xl tracking-wide text-center my-4">
+        <h1 className="text-3xl tracking-wide text-center my-4 font-heading">
           About FS Checklist
         </h1>
       </div>
