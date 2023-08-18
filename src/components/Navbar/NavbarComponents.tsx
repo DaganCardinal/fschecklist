@@ -85,15 +85,25 @@ export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
 // Settings menu
 // // //
 export const NavbarSettings = () => {
-  const { allExpanded, setAllExpanded } = useContext(AppContext)!;
+  const { allExpanded, setAllExpanded, darkMode, setDarkMode } =
+    useContext(AppContext)!;
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const allExpandedFromLocalStorage = localStorage.getItem("allExpanded");
+  const darkModeFromLocalStorage = localStorage.getItem("darkMode");
 
   useEffect(() => {
     if (allExpandedFromLocalStorage) {
       setAllExpanded(allExpandedFromLocalStorage === "true");
     }
   }, []);
+
+  useEffect(() => {
+    if (darkModeFromLocalStorage) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  });
 
   const toggleSettingsDropdown = () => {
     setIsSettingsOpen(!isSettingsOpen);
@@ -102,6 +112,16 @@ export const NavbarSettings = () => {
   const handleAllExpanded = (isChecked: boolean) => {
     setAllExpanded(isChecked);
     localStorage.setItem("allExpanded", isChecked.toString());
+  };
+
+  const handleDarkMode = (isChecked: boolean) => {
+    setDarkMode(isChecked);
+    localStorage.setItem("darkMode", isChecked.toString());
+    if (isChecked) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   };
 
   return (
@@ -115,7 +135,7 @@ export const NavbarSettings = () => {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          className="my-auto w-6 h-6 stroke-black"
+          className="my-auto w-6 h-6 stroke-black dark:stroke-gray-100"
           viewBox="0 0 16 16"
         >
           <path
@@ -150,10 +170,9 @@ export const NavbarSettings = () => {
           </li>
           <li className="py-2">
             <ToggleSwitch
-              disabled
-              label="Dark mode (coming soon)"
-              onChange={() => void 0}
-              checked={false}
+              label="Dark mode"
+              onChange={(e) => handleDarkMode(e)}
+              checked={darkMode}
             />
           </li>
         </ul>

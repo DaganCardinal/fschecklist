@@ -14,12 +14,12 @@ export const Checklist = ({
 
   return (
     <>
-      <div>
+      <div className="mt-8">
         <h1 className="text-2xl tracking-wide font-bold text-center">
           {title}
         </h1>
       </div>
-      <div className="flex flex-col mx-auto justify-center lg:w-1/2 md:w-2/3">
+      <div className="flex flex-col mx-auto justify-center lg:w-1/2 md:w-2/3 mb-12">
         {Object.keys(checklistData).map((aircraft) => (
           <div key={aircraft} className="space-y-4">
             {Object.keys(checklistData[aircraft]).map((sectionTitle, index) => (
