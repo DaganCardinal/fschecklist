@@ -6,7 +6,7 @@ export type ListItemProps = {
   value: string;
   subtext?: string;
   onChecked?: (checked: boolean) => void;
-  checked?: boolean; // Renamed from 'defaultChecked'
+  checked?: boolean;
 };
 
 export const ListItem = ({
@@ -14,7 +14,7 @@ export const ListItem = ({
   value,
   subtext,
   onChecked,
-  checked = false, // Renamed from 'defaultChecked'
+  checked = false,
 }: ListItemProps) => {
   const handleChecked = () => {
     const newCheckedState = !checked;

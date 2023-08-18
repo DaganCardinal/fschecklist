@@ -1,5 +1,6 @@
 import { Outlet, Navigate } from "react-router-dom";
-import { MainNavbar } from "../components/Navbar";
+import { MainNavbar } from "../components/Navbar/Navbar";
+import { AppProvider } from "../components/ContextProvider";
 
 export default function Root() {
   // Get path name
@@ -7,9 +8,11 @@ export default function Root() {
 
   return (
     <>
-      {path == "/" && <Navigate to="/home" />}
-      <MainNavbar />
-      <Outlet />
+      <AppProvider>
+        {path == "/" && <Navigate to="/home" />}
+        <MainNavbar />
+        <Outlet />
+      </AppProvider>
     </>
   );
 }
