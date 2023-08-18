@@ -150,9 +150,10 @@ export const NavbarSettings = () => {
           </li>
           <li className="py-2">
             <ToggleSwitch
-              label="Dark mode"
-              onChange={(e) => handleAllExpanded(e)}
-              checked={allExpanded}
+              disabled
+              label="Dark mode (coming soon)"
+              onChange={() => void 0}
+              checked={false}
             />
           </li>
         </ul>
