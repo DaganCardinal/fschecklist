@@ -1,7 +1,7 @@
 import { ListSection } from "./ListSection";
 import { ListDataType } from "../utils/types";
-import { ToggleSwitch } from "flowbite-react";
-import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { AppContext } from "./ContextProvider";
 
 export const Checklist = ({
   checklistData,
@@ -10,29 +10,10 @@ export const Checklist = ({
   checklistData: ListDataType;
   title: string;
 }) => {
-  const [allExpanded, setAllExpanded] = useState(false);
-  const allExpandedFromLocalStorage = localStorage.getItem("allExpanded");
-
-  useEffect(() => {
-    if (allExpandedFromLocalStorage) {
-      setAllExpanded(allExpandedFromLocalStorage === "true");
-    }
-  }, []);
-
-  const handleAllExpanded = (isChecked: boolean) => {
-    setAllExpanded(isChecked);
-    localStorage.setItem("allExpanded", isChecked.toString());
-  };
+  const { allExpanded } = useContext(AppContext)!;
 
   return (
     <>
-      <div className="flex flex-row mx-10 mt-8">
-        <ToggleSwitch
-          label="Expand All"
-          onChange={(e) => handleAllExpanded(e)}
-          checked={allExpanded}
-        />
-      </div>
       <div>
         <h1 className="text-2xl tracking-wide font-bold text-center">
           {title}
