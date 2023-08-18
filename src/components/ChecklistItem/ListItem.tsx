@@ -23,7 +23,7 @@ export const ListItem = ({
 
   return (
     <button
-      className={`flex flex-row flex-wrap checklist-item px-2 py-[0.2rem] even:bg-gray-200 odd:bg-transparent rounded-lg w-full mx-10 text-lg ${
+      className={`flex flex-row flex-wrap checklist-item px-2 py-[0.2rem] even:bg-gray-200 dark:even:bg-gray-700  odd:bg-transparent rounded-lg w-full mx-10 text-lg ${
         checked && "line-through"
       }`}
       onClick={handleChecked}

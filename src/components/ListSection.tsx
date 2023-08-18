@@ -85,7 +85,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
-              className="my-auto ms-2 fill-black w-5 h-5 stroke-black"
+              className="my-auto ms-2 fill-black w-5 h-5 stroke-black dark:stroke-gray-100"
               viewBox="0 -1 16 18"
             >
               <path
