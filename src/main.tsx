@@ -10,6 +10,7 @@ import { C172 } from "./routes/C172";
 import { CRJX } from "./routes/CRJ";
 import { Home } from "./routes/Home";
 import { ErrorPage } from "./pages/ErrorPage";
+import { About } from "./routes/About";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },
