@@ -19,23 +19,23 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/737",
+        path: "/b737-checklist",
         element: <B73XNG />,
       },
       {
-        path: "/208",
+        path: "/c208-checklist",
         element: <C208B />,
       },
       {
-        path: "/a320",
+        path: "/a320-checklist",
         element: <A320 />,
       },
       {
-        path: "/c172",
+        path: "/c172-checklist",
         element: <C172 />,
       },
       {
-        path: "/crjx",
+        path: "/crjx-checklist",
         element: <CRJX />,
       },
       {

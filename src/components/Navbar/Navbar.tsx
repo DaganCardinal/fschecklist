@@ -12,23 +12,23 @@ export const MainNavbar = () => {
 
   const navbarDropdownItems = [
     {
-      to: "/737",
+      to: "/b737-checklist",
       content: "Boeing 737 NG",
     },
     {
-      to: "/a320",
+      to: "/a320-checklist",
       content: "Airbus A320",
     },
     {
-      to: "/crjx",
+      to: "/crjx-checklist",
       content: "CRJ",
     },
     {
-      to: "/c172",
+      to: "/c172-checklist",
       content: "Cessna 172",
     },
     {
-      to: "/208",
+      to: "/c208-checklist",
       content: "Cessna 208B",
     },
   ];

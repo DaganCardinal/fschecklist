@@ -13,9 +13,9 @@ export default {
         body: ["Roboto", "sans-serif"],
       },
       backgroundImage: (theme) => ({
-        boeing737: "url('/assets/B737BG.png')",
-        airbus320: "url('/assets/A320BG.png')",
-        cessna172: "url('/assets/C172BG.png')",
+        boeing737: "url('/assets/b737-boeing-checklist-background.png')",
+        airbus320: "url('/assets/a320-airbus-checklist-background.png')",
+        cessna172: "url('/assets/cessna-172-checklist-background.png')",
       }),
     },
   },
