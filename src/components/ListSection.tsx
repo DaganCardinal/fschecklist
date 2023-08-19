@@ -119,7 +119,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
         )}
       </div>
       {isExpanded && (
-        <div className="mx-8 font-body">
+        <div className="mx-8 font-body backdrop-blur-sm">
           {items.map((item, index) => (
             <ListItem
               key={index}

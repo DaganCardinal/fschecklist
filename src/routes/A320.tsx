@@ -10,6 +10,7 @@ export const A320 = () => {
         checklistData={checklistData}
         pageTitle="Airbus A320 | FSChecklist"
         aircraftName="Airbus A320"
+        image="bg-airbus320"
       />
     </>
   );

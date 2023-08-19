@@ -29,6 +29,57 @@ export const About = () => {
           Contribute to the project on Github!
         </p>
       </div>
+      <div className="font-body text-center mt-8">
+        <h3 className="text-xl font-semibold font-heading tracking-wide my-4">
+          Image Credits:
+        </h3>
+        <ul>
+          <li>
+            Airbus A320 Background: Modified from{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Airbus_A32X_family_v1.0.png"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              Julien.scavini
+            </a>
+            ,{" "}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/3.0"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              CC BY-SA 3.0
+            </a>
+            , via Wikimedia Commons{" "}
+          </li>
+          <li>
+            Boeing 737 Background: Modified from{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Boeing_737_family_v1.0.png"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              Julien.scavini
+            </a>
+            ,{" "}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/3.0"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              CC BY-SA 3.0
+            </a>
+            , via Wikimedia Commons{" "}
+          </li>
+          <li>
+            Cessna 172 Background: Modified from{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Cessna_172.svg"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              Marek Cel
+            </a>
+            , CC0, via Wikimedia Commons{" "}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
