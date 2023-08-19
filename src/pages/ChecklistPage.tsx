@@ -27,7 +27,7 @@ export const ChecklistPage = ({
 
   return (
     <>
-      <div className={`relative ${image} bg-contain`}>
+      <div className={`relative ${image}  bg-contain`}>
         <Checklist
           checklistData={checklistData}
           title={aircraftName}
