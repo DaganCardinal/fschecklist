@@ -10,6 +10,7 @@ export const C172 = () => {
         checklistData={checklistData}
         pageTitle="Cessna 172 | FSChecklist"
         aircraftName="Cessna 172"
+        image="bg-cessna172"
       />
     </>
   );

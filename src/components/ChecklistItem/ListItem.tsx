@@ -28,7 +28,7 @@ export const ListItem = ({
       }`}
       onClick={handleChecked}
     >
-      <span className={`label ${checked && "line-through"}`}>
+      <span className={`label md:tracking-wide ${checked && "line-through"}`}>
         {toTitleCase(label)}
       </span>
       <span className="dots"></span>

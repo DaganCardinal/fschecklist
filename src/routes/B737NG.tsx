@@ -9,7 +9,8 @@ export const B73XNG = () => {
       <ChecklistPage
         checklistData={checklistData}
         pageTitle="Boeing 737 NG | FSChecklist"
-        aircraftName="Boeing 737-X NG"
+        aircraftName="Boeing 737 NG"
+        image="bg-boeing737"
       />
     </>
   );

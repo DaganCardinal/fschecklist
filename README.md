@@ -14,7 +14,7 @@ In order to keep it light, all data is handled locally through JSON, there are n
 
 ## Future Feature List
 
-- Bring back dark mode
+- ~~Bring back dark mode~~
 - ~~Better styling for completed sections~~
 - ~~Add user prefs to localStorage (dark mode, expand all, etc.)~~
 - Add print functionality

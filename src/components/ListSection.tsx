@@ -58,7 +58,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
     <div className="my-6">
       <div className="flex flex-row w-full justify-center">
         <button
-          className={`flex flex-row font-semibold tracking-wider text-xl text-center pt-4  ${
+          className={`flex flex-row tracking-wide text-2xl text-center pt-4 font-heading ${
             allChecked && "line-through"
           }`}
           onClick={() => setIsExpanded(!isExpanded)}
@@ -119,7 +119,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
         )}
       </div>
       {isExpanded && (
-        <div className="mx-8">
+        <div className="mx-8 font-body backdrop-blur-sm">
           {items.map((item, index) => (
             <ListItem
               key={index}

@@ -1,7 +1,8 @@
-import { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ToggleSwitch } from "flowbite-react";
 import { AppContext } from "../ContextProvider";
+import { useDropdown } from "../../hooks/hooks";
 
 interface NavbarLinkProps {
   to: string;
@@ -12,7 +13,7 @@ export const NavbarLink = ({ to, content }: NavbarLinkProps) => {
   return (
     <Link
       to={to}
-      className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+      className="block py-2 font-body  pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
     >
       {content}
     </Link>
@@ -29,18 +30,15 @@ interface NavbarDropdownProps {
 }
 
 export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
-  const [isDropdownMenuOpen, setIsDropdownMenuOpen] = useState(false);
+  const { isDropdownOpen, toggleDropdown, dropdownRef } = useDropdown();
 
-  const toggleDropdown = () => {
-    setIsDropdownMenuOpen(!isDropdownMenuOpen);
-  };
   return (
     <>
       <button
         id="aircraftDropdownButton"
         onClick={toggleDropdown}
         data-dropdown-toggle="aircraftDropdown"
-        className="flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+        className="flex items-center font-body justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
       >
         {title}{" "}
         <svg
@@ -62,8 +60,9 @@ export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
       {/* Dropdown menu */}
       <div
         id="aircraftDropdown"
+        ref={dropdownRef}
         className={`z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 absolute ${
-          isDropdownMenuOpen ? "" : "hidden"
+          isDropdownOpen ? "" : "hidden"
         }`}
       >
         <ul
@@ -87,15 +86,19 @@ export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
 export const NavbarSettings = () => {
   const { allExpanded, setAllExpanded, darkMode, setDarkMode } =
     useContext(AppContext)!;
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const allExpandedFromLocalStorage = localStorage.getItem("allExpanded");
   const darkModeFromLocalStorage = localStorage.getItem("darkMode");
+  const {
+    isDropdownOpen: isSettingsOpen,
+    toggleDropdown: toggleSettingsDropdown,
+    dropdownRef,
+  } = useDropdown();
 
   useEffect(() => {
     if (allExpandedFromLocalStorage) {
       setAllExpanded(allExpandedFromLocalStorage === "true");
     }
-  }, []);
+  }, [allExpanded, allExpandedFromLocalStorage]);
 
   useEffect(() => {
     if (darkModeFromLocalStorage) {
@@ -103,11 +106,7 @@ export const NavbarSettings = () => {
     } else {
       document.documentElement.classList.remove("dark");
     }
-  });
-
-  const toggleSettingsDropdown = () => {
-    setIsSettingsOpen(!isSettingsOpen);
-  };
+  }, [darkMode, darkModeFromLocalStorage]);
 
   const handleAllExpanded = (isChecked: boolean) => {
     setAllExpanded(isChecked);
@@ -120,6 +119,7 @@ export const NavbarSettings = () => {
     if (isChecked) {
       document.documentElement.classList.add("dark");
     } else {
+      localStorage.removeItem("darkMode");
       document.documentElement.classList.remove("dark");
     }
   };
@@ -153,6 +153,7 @@ export const NavbarSettings = () => {
       {/* Settings dropdown menu */}
       <div
         id="settingsDropdown"
+        ref={dropdownRef}
         className={`z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow min-w-[16rem]  dark:bg-gray-700 dark:divide-gray-600 absolute -translate-x-36 ${
           isSettingsOpen ? "" : "hidden"
         }`}

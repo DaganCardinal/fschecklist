@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export const About = () => {
   return (
-    <div className="flex flex-col w-full justify-center my-10">
+    <div className="flex flex-col w-full justify-center my-10 font-body">
       <div>
-        <h1 className="text-3xl tracking-wide text-center my-4">
+        <h1 className="text-3xl tracking-wide text-center my-4 font-heading">
           About FS Checklist
         </h1>
       </div>
@@ -28,6 +28,57 @@ export const About = () => {
           </Link>
           Contribute to the project on Github!
         </p>
+      </div>
+      <div className="font-body text-center mt-8">
+        <h3 className="text-xl font-semibold font-heading tracking-wide my-4">
+          Image Credits:
+        </h3>
+        <ul>
+          <li>
+            Airbus A320 Background: Modified from{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Airbus_A32X_family_v1.0.png"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              Julien.scavini
+            </a>
+            ,{" "}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/3.0"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              CC BY-SA 3.0
+            </a>
+            , via Wikimedia Commons{" "}
+          </li>
+          <li>
+            Boeing 737 Background: Modified from{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Boeing_737_family_v1.0.png"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              Julien.scavini
+            </a>
+            ,{" "}
+            <a
+              href="https://creativecommons.org/licenses/by-sa/3.0"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              CC BY-SA 3.0
+            </a>
+            , via Wikimedia Commons{" "}
+          </li>
+          <li>
+            Cessna 172 Background: Modified from{" "}
+            <a
+              href="https://commons.wikimedia.org/wiki/File:Cessna_172.svg"
+              className="underline text-blue-600 visited:text-purple-600"
+            >
+              Marek Cel
+            </a>
+            , CC0, via Wikimedia Commons{" "}
+          </li>
+        </ul>
       </div>
     </div>
   );
