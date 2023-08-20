@@ -11,7 +11,7 @@ export const Home = () => {
         </p>
         <p className="text-xl">Select an aircraft to get started</p>
       </div>
-      <div className="flex flex-col md:flex-row flex-wrap md:justify-between w-1/2 mx-auto mt-8">
+      <div className="flex flex-col md:flex-row flex-wrap md:justify-between md:w-auto max-w-[75%] mx-auto mt-8">
         <Link to="/b737-checklist" className="mx-auto">
           <Button className="my-4 min-w-[9rem]">Boeing 737 NG</Button>
         </Link>
