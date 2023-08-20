@@ -38,7 +38,7 @@ export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
         id="aircraftDropdownButton"
         onClick={toggleDropdown}
         data-dropdown-toggle="aircraftDropdown"
-        className="flex items-center font-body justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+        className="flex items-center font-body md:text-md text-lg  justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
       >
         {title}{" "}
         <svg
@@ -61,7 +61,7 @@ export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
       <div
         id="aircraftDropdown"
         ref={dropdownRef}
-        className={`z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 absolute ${
+        className={`z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 absolute mt-2 ${
           isDropdownOpen ? "" : "hidden"
         }`}
       >
@@ -70,7 +70,7 @@ export const NavbarDropdown = ({ title, links }: NavbarDropdownProps) => {
           aria-labelledby="aircraftDropdownButton"
         >
           {links.map((link) => (
-            <li className="p-2">
+            <li className="p-2 md:text-md text-lg">
               <NavbarLink to={link.to} content={link.content} />
             </li>
           ))}
@@ -154,7 +154,7 @@ export const NavbarSettings = () => {
       <div
         id="settingsDropdown"
         ref={dropdownRef}
-        className={`z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow min-w-[16rem]  dark:bg-gray-700 dark:divide-gray-600 absolute -translate-x-36 ${
+        className={`z-10 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow min-w-[16rem]  dark:bg-gray-700 dark:divide-gray-600 absolute mt-2 md:mt-0 md:right-0 ${
           isSettingsOpen ? "" : "hidden"
         }`}
       >
