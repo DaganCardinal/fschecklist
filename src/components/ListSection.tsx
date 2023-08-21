@@ -5,22 +5,32 @@ import { toTitleCase } from "../utils/utilFunctions";
 
 type ListSectionProps = {
   title: string;
-  allExpanded?: boolean;
+  isExpanded?: boolean;
+  toggleExpanded: () => void;
   items: ListItemType[];
   index: number;
+  onAllChecked: (allChecked: boolean) => void;
 };
 
 export const ListSection: React.FC<ListSectionProps> = ({
   title,
   items,
-  allExpanded,
-  index,
+  isExpanded,
+  toggleExpanded,
+  onAllChecked,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(index === 0);
+  // // //
+  // States, variables, and context
+  // // //
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
     items.map(() => false)
   );
+  const checkedCount = checkedItems.filter((item) => item).length;
+  const allChecked = checkedCount === items.length;
 
+  // // //
+  // Functions
+  // // //
   const handleChecked = (isChecked: boolean, index: number) => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = isChecked;
@@ -35,20 +45,10 @@ export const ListSection: React.FC<ListSectionProps> = ({
     setCheckedItems(items.map(() => true));
   };
 
-  // Handle expansion of all sections
-  useEffect(() => {
-    if (index !== 0 || allExpanded) {
-      setIsExpanded(allExpanded ?? false);
-    }
-  }, [allExpanded]);
-
-  const checkedCount = checkedItems.filter((item) => item).length;
-  const allChecked = checkedCount === items.length;
-
-  // Handle checking or unchecking of all items
   useEffect(() => {
     if (allChecked) {
       setCheckedItems(items.map(() => true));
+      onAllChecked(true);
       return;
     }
     setCheckedItems(items.map(() => false));
@@ -61,7 +61,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
           className={`flex flex-row tracking-wide text-2xl text-center pt-4 font-heading ${
             allChecked && "line-through"
           }`}
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={toggleExpanded}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
