@@ -5,7 +5,8 @@ import { toTitleCase } from "../utils/utilFunctions";
 
 type ListSectionProps = {
   title: string;
-  allExpanded?: boolean;
+  isExpanded?: boolean;
+  toggleExpanded: () => void;
   items: ListItemType[];
   index: number;
 };
@@ -13,10 +14,9 @@ type ListSectionProps = {
 export const ListSection: React.FC<ListSectionProps> = ({
   title,
   items,
-  allExpanded,
-  index,
+  isExpanded,
+  toggleExpanded,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(index === 0);
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
     items.map(() => false)
   );
@@ -34,13 +34,6 @@ export const ListSection: React.FC<ListSectionProps> = ({
     }
     setCheckedItems(items.map(() => true));
   };
-
-  // Handle expansion of all sections
-  useEffect(() => {
-    if (index !== 0 || allExpanded) {
-      setIsExpanded(allExpanded ?? false);
-    }
-  }, [allExpanded]);
 
   const checkedCount = checkedItems.filter((item) => item).length;
   const allChecked = checkedCount === items.length;
@@ -61,7 +54,7 @@ export const ListSection: React.FC<ListSectionProps> = ({
           className={`flex flex-row tracking-wide text-2xl text-center pt-4 font-heading ${
             allChecked && "line-through"
           }`}
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={toggleExpanded}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
