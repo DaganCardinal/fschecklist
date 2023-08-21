@@ -29,7 +29,6 @@ export const Checklist = ({
   // // //
   // Functions
   // // //
-
   useEffect(() => {
     if (allExpanded) {
       setExpandedSections(new Array(totalSections).fill(true));
@@ -48,6 +47,19 @@ export const Checklist = ({
       newExpanded[index] = !newExpanded[index];
       return newExpanded;
     });
+  };
+
+  const handleAllChecked = (allChecked: boolean, sectionIndex: number) => {
+    if (allChecked) {
+      setExpandedSections((prev) => {
+        const newExpanded = [...prev];
+        newExpanded[sectionIndex] = false;
+        if (sectionIndex < newExpanded.length - 1) {
+          newExpanded[sectionIndex + 1] = true;
+        }
+        return newExpanded;
+      });
+    }
   };
 
   return (
@@ -85,6 +97,9 @@ export const Checklist = ({
                           Object.keys(checklistData[aircraft]).length +
                           sectionIndex
                       )
+                    }
+                    onAllChecked={(allChecked) =>
+                      handleAllChecked(allChecked, sectionIndex)
                     }
                   />
                 )

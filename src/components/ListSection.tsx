@@ -9,6 +9,7 @@ type ListSectionProps = {
   toggleExpanded: () => void;
   items: ListItemType[];
   index: number;
+  onAllChecked: (allChecked: boolean) => void;
 };
 
 export const ListSection: React.FC<ListSectionProps> = ({
@@ -16,11 +17,20 @@ export const ListSection: React.FC<ListSectionProps> = ({
   items,
   isExpanded,
   toggleExpanded,
+  onAllChecked,
 }) => {
+  // // //
+  // States, variables, and context
+  // // //
   const [checkedItems, setCheckedItems] = useState<boolean[]>(
     items.map(() => false)
   );
+  const checkedCount = checkedItems.filter((item) => item).length;
+  const allChecked = checkedCount === items.length;
 
+  // // //
+  // Functions
+  // // //
   const handleChecked = (isChecked: boolean, index: number) => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = isChecked;
@@ -35,13 +45,10 @@ export const ListSection: React.FC<ListSectionProps> = ({
     setCheckedItems(items.map(() => true));
   };
 
-  const checkedCount = checkedItems.filter((item) => item).length;
-  const allChecked = checkedCount === items.length;
-
-  // Handle checking or unchecking of all items
   useEffect(() => {
     if (allChecked) {
       setCheckedItems(items.map(() => true));
+      onAllChecked(true);
       return;
     }
     setCheckedItems(items.map(() => false));
