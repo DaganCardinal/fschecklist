@@ -1,6 +1,7 @@
-import { Input } from "../Inputs";
+import { HeaderInput } from "../Inputs";
 import { ListItemEditor } from "./ListItemEditor";
 import { ListItemType } from "../../utils/types";
+import { EditorButton } from "../Buttons";
 
 interface SectionEditorProps {
   sectionTitle: string;
@@ -15,12 +16,13 @@ export const SectionEditor = ({
 }: SectionEditorProps) => {
   return (
     <>
-      <div>
-        <Input
+      <div className="my-4">
+        <HeaderInput
           type="text"
           id="sectionTitle"
           name="Section Title"
           value={sectionTitle}
+          textSize="text-xl"
           onChange={(e) => onChange(e.target.value, listItems)}
         />
       </div>
@@ -37,17 +39,16 @@ export const SectionEditor = ({
             }
           />
         ))}
-        <button
-          className="flex flex-row border-2 border-gray-200 border-dashed rounded-md p-2 my-4 w-full text-center justify-center"
+        <EditorButton
+          label="Add Line Item"
           onClick={() =>
             onChange(sectionTitle, [
               ...listItems,
               { label: "", value: "", subtext: "" },
             ])
           }
-        >
-          Add Line Item
-        </button>
+          borderType="border-dashed"
+        />
       </div>
     </>
   );

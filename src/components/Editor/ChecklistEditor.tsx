@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { ListSectionType } from "../../utils/types";
 import { SectionEditor } from "./SectionEditor";
-import { Input } from "../Inputs";
+import { HeaderInput } from "../Inputs";
+import { EditorButton, SaveButton } from "../Buttons";
 
 interface ChecklistBuilderProps {
   initialListData?: ListSectionType;
@@ -18,11 +19,12 @@ export const ChecklistEditor = ({
   return (
     <div className="flex flex-col justify-cetner mx-auto w-1/2 relative mt-8">
       <div className="relative mb-8">
-        <Input
+        <HeaderInput
           type="text"
           id="aircraftName"
-          name="Aircraft"
+          name="Aircraft Name"
           value={aircraft}
+          textSize="text-2xl"
           onChange={(e) => setAircraft(e.target.value)}
         />
       </div>
@@ -39,21 +41,21 @@ export const ChecklistEditor = ({
           }}
         />
       ))}
-      <button
-        className="flex flex-row border-2 border-gray-200 rounded-md p-2 my-4 w-full text-center justify-center"
+      <EditorButton
+        label="Add Section"
         onClick={() =>
           setListData({
             ...listData,
-            [`${Object.keys(listData).length + 1} New Section`]: [],
+            [``]: [],
           })
         }
-      >
-        Add Section
-      </button>
+        borderType="border-solid"
+      />
       {onSave && (
-        <button onClick={() => onSave(aircraft, listData)}>
-          Save Checklist
-        </button>
+        <SaveButton
+          onClick={() => onSave(aircraft, listData)}
+          label="Save Checklist"
+        />
       )}
     </div>
   );

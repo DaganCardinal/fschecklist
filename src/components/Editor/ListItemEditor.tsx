@@ -21,7 +21,7 @@ export const ListItemEditor = ({ listItem, onChange }: ListItemEditorProps) => {
             onBlur={() => {}}
           />
         </span>
-        <span className="dots"></span>
+        <span className="dots dark:invert"></span>
         <span className="value">
           <Input
             type="text"
