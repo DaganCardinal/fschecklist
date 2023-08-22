@@ -11,6 +11,7 @@ import { CRJX } from "./routes/CRJ";
 import { Home } from "./routes/Home";
 import { ErrorPage } from "./pages/ErrorPage";
 import { About } from "./routes/About";
+import { Editor } from "./routes/Editor";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/editor",
+        element: <Editor />,
       },
     ],
   },
