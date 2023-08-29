@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 import { getPerformance } from "firebase/performance";
 
 const firebaseConfig = {
@@ -15,5 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const perf = getPerformance(app);
+
+logEvent(analytics, "app_started");
 
 export { app, analytics, perf };
