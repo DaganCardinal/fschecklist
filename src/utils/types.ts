@@ -2,6 +2,7 @@ export type ListItemType = {
   label: string;
   value: string;
   subtext?: string;
+  id?: string;
 };
 
 export type ListSectionType = {
