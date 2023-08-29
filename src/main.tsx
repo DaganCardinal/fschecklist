@@ -12,6 +12,7 @@ import { Home } from "./routes/Home";
 import { ErrorPage } from "./pages/ErrorPage";
 import { About } from "./routes/About";
 import { Editor } from "./routes/Editor";
+import { app, analytics, perf } from "./utils/firebase";
 
 const router = createBrowserRouter([
   {
