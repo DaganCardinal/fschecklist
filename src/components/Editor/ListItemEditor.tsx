@@ -4,13 +4,18 @@ import { ListItemType } from "../../utils/types";
 
 interface ListItemEditorProps {
   listItem: ListItemType;
+  id?: string;
   onChange: (updatedListItem: ListItemType) => void;
 }
 
-export const ListItemEditor = ({ listItem, onChange }: ListItemEditorProps) => {
+export const ListItemEditor = ({
+  listItem,
+  onChange,
+  id,
+}: ListItemEditorProps) => {
   return (
     <>
-      <div className="flex flex-row flex-wrap checklist-item">
+      <div className="flex flex-row flex-grow flex-wrap checklist-item" id={id}>
         <span className="label">
           <Input
             type="text"
@@ -21,7 +26,7 @@ export const ListItemEditor = ({ listItem, onChange }: ListItemEditorProps) => {
             onBlur={() => {}}
           />
         </span>
-        <span className="dots dark:invert"></span>
+        <span className="dots"></span>
         <span className="value">
           <Input
             type="text"

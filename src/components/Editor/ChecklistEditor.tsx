@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ListSectionType } from "../../utils/types";
 import { SectionEditor } from "./SectionEditor";
 import { HeaderInput } from "../Inputs";
-import { EditorButton, SaveButton } from "../Buttons";
+import { EditorButton, SaveButton, DeleteButton } from "../Buttons";
 
 interface ChecklistBuilderProps {
   initialListData?: ListSectionType;
@@ -29,17 +29,28 @@ export const ChecklistEditor = ({
         />
       </div>
       {Object.keys(listData).map((sectionTitle, index) => (
-        <SectionEditor
-          key={index}
-          sectionTitle={sectionTitle}
-          listItems={listData[sectionTitle]}
-          onChange={(updatedTitle, updatedLineItems) => {
-            const updatedListData = { ...listData };
-            delete updatedListData[sectionTitle];
-            updatedListData[updatedTitle] = updatedLineItems;
-            setListData(updatedListData);
-          }}
-        />
+        <div className="flex flex-col relative">
+          <SectionEditor
+            key={index}
+            sectionTitle={sectionTitle}
+            listItems={listData[sectionTitle]}
+            onChange={(updatedTitle, updatedLineItems) => {
+              const updatedListData = { ...listData };
+              delete updatedListData[sectionTitle];
+              updatedListData[updatedTitle] = updatedLineItems;
+              setListData(updatedListData);
+            }}
+          />
+          <div className="absolute right-0 top-0 translate-x-10">
+            <DeleteButton
+              onClick={() => {
+                const updatedListData = { ...listData };
+                delete updatedListData[sectionTitle];
+                setListData(updatedListData);
+              }}
+            />
+          </div>
+        </div>
       ))}
       <EditorButton
         label="Add Section"

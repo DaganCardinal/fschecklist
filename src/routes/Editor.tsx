@@ -2,7 +2,22 @@ import { ChecklistEditor } from "../components/Editor/ChecklistEditor";
 import { ListSectionType } from "../utils/types";
 
 export const Editor = () => {
+  const checkValidity = (aircraft: string, listData: ListSectionType) => {
+    if (aircraft === "") {
+      return false;
+    }
+    if (Object.keys(listData).length === 0) {
+      return false;
+    }
+    return true;
+  };
+
   const handleSave = (aircraft: string, listData: ListSectionType) => {
+    if (!checkValidity(aircraft, listData)) {
+      console.log("Please ensure all fields are filled out");
+      return;
+    }
+
     const checklistJSON = {
       [aircraft]: listData,
     };

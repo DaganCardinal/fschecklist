@@ -21,3 +21,9 @@ export function metersToFeet(meters: number): number {
 export function feetToMeters(feet: number): number {
   return feet / 3.2808;
 }
+
+export function generateId(): string {
+  const currTime = new Date().getTime().toString();
+  const randomNum = Math.floor(Math.random() * 100000000).toString();
+  return currTime + randomNum;
+}
