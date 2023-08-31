@@ -4,6 +4,7 @@ import { ListItemType } from "../../utils/types";
 import { EditorButton, DeleteButton } from "../Buttons";
 import { motion, AnimatePresence } from "framer-motion";
 import { generateId } from "../../utils/utilFunctions";
+import { useRef, useEffect } from "react";
 
 interface SectionEditorProps {
   sectionTitle: string;
@@ -20,7 +21,7 @@ export const SectionEditor = ({
 }: SectionEditorProps) => {
   return (
     <>
-      <div id={id}>
+      <div id={id} className="group">
         <div className="my-4">
           <HeaderInput
             type="text"
@@ -29,9 +30,18 @@ export const SectionEditor = ({
             value={sectionTitle}
             textSize="text-xl"
             onChange={(e) => onChange(e.target.value, listItems)}
+            onKeyPress={(e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                onChange(sectionTitle, [
+                  ...listItems,
+                  { label: "", value: "", subtext: "", id: generateId() },
+                ]);
+              }
+            }}
           />
         </div>
-        <div>
+        <div className="">
           <AnimatePresence>
             {listItems.map((listItem, index) => (
               <motion.div
@@ -63,6 +73,20 @@ export const SectionEditor = ({
                         )
                       )
                     }
+                    onKeyPress={(e) => {
+                      if (e.key === "Enter") {
+                        e.preventDefault();
+                        onChange(sectionTitle, [
+                          ...listItems,
+                          {
+                            label: "",
+                            value: "",
+                            subtext: "",
+                            id: generateId(),
+                          },
+                        ]);
+                      }
+                    }}
                   />
                   <div className="right-0 translate-x-10 absolute">
                     <DeleteButton
@@ -78,7 +102,7 @@ export const SectionEditor = ({
               </motion.div>
             ))}
           </AnimatePresence>
-          <div className="">
+          <div className="group-focus-within:block hidden">
             <EditorButton
               label="Add Line Item"
               onClick={() =>

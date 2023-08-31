@@ -3,12 +3,25 @@ import { ListSectionType } from "../utils/types";
 
 export const Editor = () => {
   const checkValidity = (aircraft: string, listData: ListSectionType) => {
-    if (aircraft === "") {
-      return false;
+    for (const sectionId in listData) {
+      const sectionData = listData[sectionId];
+      const { sectionTitle, listItems } = sectionData;
+
+      if (!sectionTitle) {
+        return false;
+      }
+
+      if (!listItems.length) {
+        return false;
+      }
+
+      for (const listItem of listItems) {
+        if (!listItem.label || !listItem.value) {
+          return false;
+        }
+      }
     }
-    if (Object.keys(listData).length === 0) {
-      return false;
-    }
+
     return true;
   };
 

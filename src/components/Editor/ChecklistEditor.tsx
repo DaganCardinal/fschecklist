@@ -34,7 +34,7 @@ export const ChecklistEditor = ({
         {Object.entries(listData).map(([sectionId, sectionData], index) => (
           <motion.div
             layout
-            key={index}
+            key={sectionId}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8, transition: { duration: 0.1 } }}
@@ -51,18 +51,18 @@ export const ChecklistEditor = ({
           >
             <div className="flex flex-col relative">
               <SectionEditor
-                key={index}
+                key={sectionId}
                 id={sectionId}
                 sectionTitle={sectionData.sectionTitle}
                 listItems={sectionData.listItems}
                 onChange={(updatedTitle, updatedLineItems) => {
-                  const updatedListData = { ...listData };
-                  delete updatedListData[sectionId];
-                  updatedListData[generateId()] = {
-                    sectionTitle: updatedTitle,
-                    listItems: updatedLineItems,
-                  };
-                  setListData(updatedListData);
+                  setListData({
+                    ...listData,
+                    [sectionId]: {
+                      sectionTitle: updatedTitle,
+                      listItems: updatedLineItems,
+                    },
+                  });
                 }}
               />
               <div className="absolute right-0 top-0 translate-x-10">

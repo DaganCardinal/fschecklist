@@ -30,6 +30,7 @@ export const DeleteButton = ({ onClick }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
+      tabIndex={-1}
       className="my-6 text-center justify-center p-2 rounded-lg border-2 border-red-600 border-opacity-25  bg-transparent text-gray-100 tracking-wide dark:hover:bg-red-500 hover:bg-red-400 flex flex-row transition-all duration-300 ease-in-out"
     >
       <svg
