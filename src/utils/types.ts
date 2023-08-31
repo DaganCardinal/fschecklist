@@ -6,7 +6,10 @@ export type ListItemType = {
 };
 
 export type ListSectionType = {
-  [sectionTitle: string]: ListItemType[];
+  [sectionId: string]: {
+    sectionTitle: string;
+    listItems: ListItemType[];
+  };
 };
 
 export type ListDataType = {
